@@ -10,8 +10,11 @@ def test_3():
     # 'wke'
     assert longest_substring('pwwkew') == 3
 def test_4():
+    # 'wke'
+    assert longest_substring('testtestyeats') == 5
+def test_5():
     #  ' '
     assert longest_substring(' ') == 1
-def test_5():
+def test_6():
     #  ''
     assert longest_substring('') == 0

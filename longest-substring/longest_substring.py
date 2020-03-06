@@ -1,27 +1,45 @@
 # Given a string, find the length of the longest substring without repeating characters.
 
-
-
-
 def longest_substring(string):
-    # Attempt sliding window approach
-    # Maintain references to two points
-    # Incrementally adjust and compare existing values using map (dict)
+    # Attempt optimizing sliding window approach
     longest_substring_length = 0
     first_index, second_index = 0, 0
-    character_set = set()
-    while first_index < len(string) and second_index < len(string):
-        # push second index forward if character not repeated
-        if string[second_index] not in character_set:
-            second_index += 1
-            character_set.add(string[second_index])
-            longest_substring_length = max(longest_substring_length, second_index - 1 - first_index)
+    character_map = {}
+    # Iterate through characters, mapping latest (rightmost) character
+    # location. Using this to skip first index to one character after character last encountered
+    for second_index, char in enumerate(string):
+        if char in character_map and first_index <= character_map[char]:
+            first_index = character_map[char] + 1
         else:
-            # increment first_index
-            first_index += 1
-            character_set.remove(string[first_index])
-
+            longest_substring_length = max(longest_substring_length, second_index - first_index + 1)
+        character_map[char] = second_index
     return longest_substring_length
+
+
+
+
+
+
+# def longest_substring(string):
+#     # Attempt sliding window approach
+#     # Maintain references to two points
+#     # Incrementally adjust and compare existing values using map (dict)
+#     longest_substring_length = 0
+#     first_index, second_index = 0, 0
+#     character_set = set()
+#     while first_index < len(string) and second_index < len(string):
+#         # push second index forward if character not repeated
+#         if string[second_index] not in character_set:
+#             character_set.add(string[second_index])
+#             second_index += 1
+#             longest_substring_length = max(longest_substring_length, second_index - first_index)
+#         else:
+#             # increment first_index
+#             character_set.remove(string[first_index])
+#             first_index += 1
+
+
+#     return longest_substring_length
 
 
 
