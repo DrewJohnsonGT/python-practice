@@ -16,8 +16,24 @@ def longest_substring(string):
     return longest_substring_length
 
 
-
-
+def test_1():
+    # 'abc'
+    assert longest_substring('abcabcbb') == 3
+def test_2():
+    # 'b'
+    assert longest_substring('bbbbb') == 1
+def test_3():
+    # 'wke'
+    assert longest_substring('pwwkew') == 3
+def test_4():
+    # 'wke'
+    assert longest_substring('testtestyeats') == 5
+def test_5():
+    #  ' '
+    assert longest_substring(' ') == 1
+def test_6():
+    #  ''
+    assert longest_substring('') == 0
 
 
 # def longest_substring(string):
