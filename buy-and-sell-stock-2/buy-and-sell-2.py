@@ -2,6 +2,7 @@
 # Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
 # Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
 
+
 # Maximal solution equates to iterating over successive
 # points and when a peak follows a valley, increment profit
 def maximize_profit(prices):
@@ -15,11 +16,9 @@ def maximize_profit(prices):
     return max_profit
 
 
-
-# Brute force - get all possible transactions 
+# Brute force - get all possible transactions
 # def maximize_profit(prices):
 #     return calculate_profit(prices, 0)
-
 
 # def calculate_profit(prices, index):
 #     if index >= len(prices):
@@ -40,10 +39,13 @@ def maximize_profit(prices):
 #     return max_profit
 
 
+def test_1():
+    assert (maximize_profit([7, 1, 5, 3, 6, 4]) == 7)
 
-def test1():
-    assert(maximize_profit([7, 1, 5, 3, 6, 4]) == 7)
-def test2():
-    assert(maximize_profit([1, 2, 3, 4, 5]) == 4)
-def test3():
-    assert(maximize_profit([7, 6, 4, 3, 1]) == 0)
+
+def test_2():
+    assert (maximize_profit([1, 2, 3, 4, 5]) == 4)
+
+
+def test_3():
+    assert (maximize_profit([7, 6, 4, 3, 1]) == 0)

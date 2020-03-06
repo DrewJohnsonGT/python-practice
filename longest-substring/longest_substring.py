@@ -1,5 +1,6 @@
 # Given a string, find the length of the longest substring without repeating characters.
 
+
 def longest_substring(string):
     # Attempt optimizing sliding window approach
     longest_substring_length = 0
@@ -11,7 +12,8 @@ def longest_substring(string):
         if char in character_map and first_index <= character_map[char]:
             first_index = character_map[char] + 1
         else:
-            longest_substring_length = max(longest_substring_length, second_index - first_index + 1)
+            longest_substring_length = max(longest_substring_length,
+                                           second_index - first_index + 1)
         character_map[char] = second_index
     return longest_substring_length
 
@@ -19,18 +21,28 @@ def longest_substring(string):
 def test_1():
     # 'abc'
     assert longest_substring('abcabcbb') == 3
+
+
 def test_2():
     # 'b'
     assert longest_substring('bbbbb') == 1
+
+
 def test_3():
     # 'wke'
     assert longest_substring('pwwkew') == 3
+
+
 def test_4():
     # 'wke'
     assert longest_substring('testtestyeats') == 5
+
+
 def test_5():
     #  ' '
     assert longest_substring(' ') == 1
+
+
 def test_6():
     #  ''
     assert longest_substring('') == 0
@@ -54,12 +66,7 @@ def test_6():
 #             character_set.remove(string[first_index])
 #             first_index += 1
 
-
 #     return longest_substring_length
-
-
-
-
 
 # def longest_substring(string):
 #     # brute force - loop over characters
@@ -78,6 +85,5 @@ def test_6():
 #                 break
 #         if len(current_substring) > len(longest_substring):
 #             longest_substring = current_substring
-   
 
 #     return len(longest_substring)
