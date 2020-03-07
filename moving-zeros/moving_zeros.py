@@ -25,6 +25,12 @@ def move_zeros(nums):
         j += 1
 
 
+# Fast, simple solution
+# count=nums.count(0)
+# nums[:]=[i for i in nums if i != 0]
+# nums+=[0]*count
+
+
 def test_1():
     assert (move_zeros([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0])
 
