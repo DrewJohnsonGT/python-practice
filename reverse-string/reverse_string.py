@@ -2,7 +2,7 @@
 # Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 # You may assume all the characters consist of printable ascii characters.
 
-# Build in method
+# Built in method
 # def reverse_string(s):
 #     s.reverse()
 
