@@ -4,8 +4,6 @@
 
 # Follow up, what if you can't use division?
 
-from functools import reduce
-
 # Brute force approach
 # calculate all values in entirety
 # def integer_product(nums):
@@ -17,6 +15,8 @@ from functools import reduce
 #                 value *= nums[j]
 #         result.append(value)
 #     return result
+
+from functools import reduce
 
 # Simple optimization to first
 # calculate total product
