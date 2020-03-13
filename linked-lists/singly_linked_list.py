@@ -10,6 +10,13 @@ class ListNode:
     def __eq__(self, other):
         _self_node = self
         _other_node = other
+        if type(_self_node) == type(None):
+            if type(_other_node) == type(None):
+                return True
+            else:
+                return False
+        if type(_other_node) == type(None):
+            return False
         if _self_node.val != _other_node.val:
             return False
         return _self_node.next == _other_node.next
