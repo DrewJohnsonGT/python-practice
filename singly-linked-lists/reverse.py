@@ -42,9 +42,30 @@ from ll_helpers import create_linked_list
 #     return n
 
 # recursive solution
-# 
 def reverse(n):
+    return reverse_ll(n)
 
+# create stacks down to last node
+# push current node to end
+# previous stack points to current node
+
+
+def reverse_ll(n):
+    if n == None or n.next == None:
+        return n
+    rest_reversed = reverse_ll(n.next)
+    n.next.next = n
+    n.next = None
+    return rest_reversed
+# 1 -> 2 -> 3 -> 4 -> 5 -> None
+# 1 -> 2 -> 3 -> 4 -> None
+#               /
+#              5
+# 1 -> 2 -> 3 -> None
+#          /
+#         4
+#        /
+#       5 ...
 
 
 def test_1():
