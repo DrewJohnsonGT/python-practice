@@ -4,13 +4,12 @@ from ll_helpers import create_linked_list
 # Merge two sorted linked lists and return it as a new list.
 # The new list should be made by splicing together the nodes of the first two lists.
 
+
 # Iterate through lists
 # if one lists is at end
 # add other list values
 # otherwise compare and add lower value
 # to maintain order
-
-
 def merge(l1, l2):
     # both lists empty
     if l1 == None and l2 == None:
@@ -36,22 +35,21 @@ def merge(l1, l2):
         curr = curr.next
     return result.next
 
+
 # Recursive approach
 # removes need to assess empty list
 # edge case
-
-
-def merge(l1, l2):
-    if l1 is None:
-        return l2
-    elif l2 is None:
-        return l1
-    elif l1.val < l2.val:
-        l1.next = merge(l1.next, l2)
-        return l1
-    else:
-        l2.next = merge(l1, l2.next)
-        return l2
+# def merge(l1, l2):
+#     if l1 is None:
+#         return l2
+#     elif l2 is None:
+#         return l1
+#     elif l1.val < l2.val:
+#         l1.next = merge(l1.next, l2)
+#         return l1
+#     else:
+#         l2.next = merge(l1, l2.next)
+#         return l2
 
 
 def test_1():

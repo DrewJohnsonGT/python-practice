@@ -7,6 +7,12 @@ class ListNode:
     def __repr__(self):
         return f'{self.val} => {self.next}'
 
+    def __key(self):
+        return (self.val)
+
+    def __hash__(self):
+        return hash(self.__key())
+
     def __eq__(self, other):
         _self_node = self
         _other_node = other
