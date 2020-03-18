@@ -11,9 +11,11 @@ def create_binary_tree(l):
     for index, tree in enumerate(nodes):
         left_index = 2 * index + 1
         if left_index < count:
-            tree.left = nodes[left_index]
+            if nodes[left_index].val != None:
+                tree.left = nodes[left_index]
 
         right_index = 2 * index + 2
         if right_index < count:
-            tree.right = nodes[right_index]
+            if nodes[right_index].val != None:
+                tree.right = nodes[right_index]
     return nodes[0]
