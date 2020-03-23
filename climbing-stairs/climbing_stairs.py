@@ -29,16 +29,42 @@
 #         return 2
 #     return climb_stairs(n - 1) + climb_stairs(n - 2)
 
-
 # recursive solution with caching of values
-def climb_stairs(n, cache={1: 1, 2: 2}):
-    if n in cache:
-        return cache[n]
-    cache[n] = climb_stairs(n - 1, cache) + climb_stairs(n - 2, cache)
-    return cache[n]
+# def climb_stairs(n, cache={1: 1, 2: 2}):
+#     if n in cache:
+#         return cache[n]
+#     cache[n] = climb_stairs(n - 1, cache) + climb_stairs(n - 2, cache)
+#     return cache[n]
+
+# Iterative approach - dynamic programming
+# store values of n - x calculations in array
+# next value == previous two values combined
+# def climb_stairs(n):
+#     l = [1, 2]
+#     i = 2
+#     while i < n:
+#         l.append(l[i - 1] + l[i - 2])
+#         i += 1
+#     return l[n - 1]
 
 
 # Iterative approach - dynamic programming
+# Without using list
+def climb_stairs(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    # track two previous values
+    i = 3
+    x = 2
+    curr = prev = 3
+    while i < n:
+        prev = curr
+        curr = prev + x
+        x = prev
+        i += 1
+    return curr
 
 
 def test_1():
@@ -54,4 +80,8 @@ def test_3():
 
 
 def test_4():
+    assert (climb_stairs(5) == 8)
+
+
+def test_5():
     assert (climb_stairs(38) == 63245986)
