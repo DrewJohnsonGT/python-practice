@@ -52,41 +52,40 @@
 #         result += standard_values[value]
 #     return result
 
-
 # cleaner solution variation
 # iterate from right to left
 # checking against both mappings
-def roman_to_int(roman):
-    values = {
-        'CD': 400,
-        'CM': 900,
-        'XL': 40,
-        'XC': 90,
-        'IV': 4,
-        'IX': 9,
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-    result = 0
-    i = len(roman) - 1
-    while i >= 0:
-        value = 0
-        # check for two character matches
-        if i > 0:
-            chars = roman[i - 1:i + 1]
-            if chars in values:
-                value = values[chars]
-                i -= 2
-        if value == 0:
-            value = values[roman[i]]
-            i -= 1
-        result += value
-    return result
+# def roman_to_int(roman):
+#     values = {
+#         'CD': 400,
+#         'CM': 900,
+#         'XL': 40,
+#         'XC': 90,
+#         'IV': 4,
+#         'IX': 9,
+#         'I': 1,
+#         'V': 5,
+#         'X': 10,
+#         'L': 50,
+#         'C': 100,
+#         'D': 500,
+#         'M': 1000
+#     }
+#     result = 0
+#     i = len(roman) - 1
+#     while i >= 0:
+#         value = 0
+#         # check for two character matches
+#         if i > 0:
+#             chars = roman[i - 1:i + 1]
+#             if chars in values:
+#                 value = values[chars]
+#                 i -= 2
+#         if value == 0:
+#             value = values[roman[i]]
+#             i -= 1
+#         result += value
+#     return result
 
 
 # subtract values in one-off cases
