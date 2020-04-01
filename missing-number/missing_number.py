@@ -20,7 +20,7 @@
 #             return i
 
 
-# Guasses formular
+# Guasses formula
 # sum of n integers -
 # n(n + 1) / 2
 def get_missing(nums):

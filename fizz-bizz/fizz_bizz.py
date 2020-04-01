@@ -26,7 +26,6 @@
 #     "FizzBuzz"
 # ]
 
-
 # simply map over range of n values
 # def fizz_bizz(n):
 #     def get_value(i):
@@ -41,6 +40,7 @@
 #             else:
 #                 return str(i)
 #     return list(map(lambda x: get_value(x), range(1, n + 1)))
+
 
 # Cleaner approach - concatentate strings
 # use mapping of multiples
@@ -59,20 +59,7 @@ def fizz_bizz(n):
 
 
 def test_1():
-    assert(fizz_bizz(15) == [
-        "1",
-        "2",
-        "Fizz",
-        "4",
-        "Buzz",
-        "Fizz",
-        "7",
-        "8",
-        "Fizz",
-        "Buzz",
-        "11",
-        "Fizz",
-        "13",
-        "14",
-        "FizzBuzz"
+    assert (fizz_bizz(15) == [
+        "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11",
+        "Fizz", "13", "14", "FizzBuzz"
     ])
